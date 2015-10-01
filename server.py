@@ -1,7 +1,10 @@
 from flask import Flask, request, redirect, session
 import twilio.twiml
 
+SECRET_KEY = "kjsafkjdlkaj"
+
 app = Flask(__name__)
+app.config.from_object(__name__)
 
 callers = {
 	"+14158664966" : "Jessica"
