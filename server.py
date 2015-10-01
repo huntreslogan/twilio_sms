@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 
 callers = {
-	"+14158664966" : "Jessica"
+	"XXXXXXXXXXXX" : "Jessica"
 }
 
 @app.route("/", methods=['GET', 'POST'])
@@ -25,8 +25,7 @@ def hello_monkey():
 	else:
 		name = "Monkey"
 
-	message = "".join([name, " has messaged ", request.values.get('To'), " ",
-        str(counter), " times."])
+	message = "".join([name, " has messaged ", request.values.get('To'), " ", str(counter), " times."])
 	resp = twilio.twiml.Response()
 	resp.sms(message)
 
