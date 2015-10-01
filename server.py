@@ -26,7 +26,7 @@ def hello_monkey():
 		name = "Monkey"
 
 	message = "".join([name, " has messaged ", request.values.get('To'), " ",
-		str(counter), " times."])
+        str(counter), " times."])
 	resp = twilio.twiml.Response()
 	resp.sms(message)
 
